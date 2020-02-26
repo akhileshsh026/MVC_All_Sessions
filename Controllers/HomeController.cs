@@ -13,5 +13,11 @@ namespace MVC_All_Sessions.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Index(string UserName , string Password)
+        {
+            return View();
+        }
     }
 }
