@@ -13,7 +13,9 @@ namespace MVC_All_Sessions.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+                EmployeeRepositry employeeRepositry = new EmployeeRepositry();
+                var list = employeeRepositry.GetAll();
+                return View(list);
         }
 
  
