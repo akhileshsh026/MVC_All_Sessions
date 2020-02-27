@@ -25,6 +25,7 @@ namespace MVC_All_Sessions.Controllers
             bool result = employeeRepositry.Delete_Employee(id);
             if(result)
             {
+                TempData["Sucess"] = "The Employee Wih Id : " + id + " Deleted Sucessfully.";
                 return RedirectToAction("Index");
             } else
             {
