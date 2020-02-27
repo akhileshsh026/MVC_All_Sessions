@@ -1,4 +1,4 @@
-﻿
+﻿@model MVC_All_Sessions.Models.LoginInfo
 
 <!DOCTYPE html>
 
@@ -11,11 +11,19 @@
     <div>
         <h2>Welcome to the Login Page ......</h2>
         <form method="post" action="/">
+            @*
+        <p>
+            <lablel> UserName : <input type="text" name="UserName" /> </lablel>
+        </p>
+        <p>
+            <label> Password : <input type="text" name="Password" /> </label>
+        </p>
+            *@
             <p>
-                <lablel> UserName : <input type="text" name="UserName" /> </lablel>
+                <lablel> UserName : @Html.TextBoxFor(e => e.UserName) </lablel>
             </p>
             <p>
-                <label> Password : <input type="text" name="Password" /> </label>
+                <label> Password : @Html.TextBoxFor(e => e.Password) </label>
             </p>
             <p>
                 <button type="submit"> Login </button>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVC_All_Sessions.Models;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -16,13 +17,13 @@ namespace MVC_All_Sessions.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(string UserName , string Password)
+        public ActionResult Index(LoginInfo loginInfo)
         {
             SqlConnection con = new SqlConnection(@"Server=localhost;Database=Mcop;User Id=sa;Password=Akhilesh@123;");
             var Query = "select count(*) from LoginInfo where UserName=@uName and Password=@passwd" ;
             SqlCommand cmd = new SqlCommand(Query,con);
-            cmd.Parameters.Add(new SqlParameter("@uName",UserName));
-            cmd.Parameters.Add(new SqlParameter("@passwd",Password));
+            cmd.Parameters.Add(new SqlParameter("@uName",loginInfo.UserName));
+            cmd.Parameters.Add(new SqlParameter("@passwd", loginInfo.Password));
             con.Open();
             int noOfUsers = (int) cmd.ExecuteScalar();
             con.Close();
