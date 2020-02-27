@@ -19,17 +19,21 @@ namespace MVC_All_Sessions.Controllers
         [HttpPost]
         public ActionResult Index(LoginInfo loginInfo)
         {
-            SqlConnection con = new SqlConnection(@"Server=localhost;Database=Mcop;User Id=sa;Password=Akhilesh@123;");
-            var Query = "select count(*) from LoginInfo where UserName=@uName and Password=@passwd" ;
-            SqlCommand cmd = new SqlCommand(Query,con);
-            cmd.Parameters.Add(new SqlParameter("@uName",loginInfo.UserName));
-            cmd.Parameters.Add(new SqlParameter("@passwd", loginInfo.Password));
-            con.Open();
-            int noOfUsers = (int) cmd.ExecuteScalar();
-            con.Close();
-            if(noOfUsers >0)
+            if(ModelState.IsValid)
             {
-                return RedirectToAction("Home");
+
+                SqlConnection con = new SqlConnection(@"Server=localhost;Database=Mcop;User Id=sa;Password=Akhilesh@123;");
+                var Query = "select count(*) from LoginInfo where UserName=@uName and Password=@passwd";
+                SqlCommand cmd = new SqlCommand(Query, con);
+                cmd.Parameters.Add(new SqlParameter("@uName", loginInfo.UserName));
+                cmd.Parameters.Add(new SqlParameter("@passwd", loginInfo.Password));
+                con.Open();
+                int noOfUsers = (int)cmd.ExecuteScalar();
+                con.Close();
+                if (noOfUsers > 0)
+                {
+                    return RedirectToAction("Home");
+                }
             }
             return View();
         }

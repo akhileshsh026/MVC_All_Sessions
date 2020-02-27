@@ -21,9 +21,11 @@
             *@
             <p>
                 <lablel> UserName : @Html.TextBoxFor(e => e.UserName) </lablel>
+                <label style="color:red">@Html.ValidationMessageFor(e => e.UserName)</label>
             </p>
             <p>
                 <label> Password : @Html.TextBoxFor(e => e.Password) </label>
+                <label style="color:rebeccapurple">@Html.ValidationMessageFor(e => e.Password)</label>
             </p>
             <p>
                 <button type="submit"> Login </button>
