@@ -10,6 +10,7 @@ namespace MVC_All_Sessions.Models
     {
         [Required(ErrorMessage ="Please enter the User name ...")]
         public string UserName { get; set; }
+
         [Required(ErrorMessage ="Please Enter the password .....")]
         public string Password { get; set; }
     }
