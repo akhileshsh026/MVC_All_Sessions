@@ -31,5 +31,17 @@ namespace MVC_All_Sessions.Models
             con.Close();
             return empList;
         }
+
+        public bool Delete_Employee(int id)
+        {
+            SqlConnection con = new SqlConnection(@"Server=localhost;DataBase=Mcop;User Id =sa;Password=Akhilesh@123");
+            var Query = "delete from Employee where Id=@id";
+            SqlCommand cmd = new SqlCommand(Query, con);
+            cmd.Parameters.Add(new SqlParameter("@Id",id));
+            con.Open();
+            int noOfAffactedRows = cmd.ExecuteNonQuery();
+            con.Close();
+            return noOfAffactedRows > 0 ? true : false;
+        }
     }
 }
