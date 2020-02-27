@@ -19,21 +19,21 @@ namespace MVC_All_Sessions.Controllers
         }
 
 
-        public ActionResult DeleteEmployee()
+        public ActionResult DeleteEmployee(int id)
         {
-
+            EmployeeRepositry employeeRepositry = new EmployeeRepositry();
+            bool result = employeeRepositry.Delete_Employee(id);
+            if(result)
+            {
+                return RedirectToAction("Index");
+            } else
+            {
+                return View();
+            }
 
         }
 
-        public ActionResult CreateEmployee()
-        {
 
-        }
-
-        public ActionResult UpdateEmployee()
-        {
-
-        }
 
 
 
