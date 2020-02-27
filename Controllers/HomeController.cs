@@ -33,8 +33,13 @@ namespace MVC_All_Sessions.Controllers
                 if (noOfUsers > 0)
                 {
                     return RedirectToAction("Home");
+                } 
+                else
+                {
+                    ModelState.AddModelError("IC", "You Entered the Wrong Credianials..");
                 }
-            }
+            } 
+            
             return View();
         }
 
