@@ -8,9 +8,9 @@ namespace MVC_All_Sessions.Models
 {
     public class LoginInfo
     {
-        [Required]
+        [Required(ErrorMessage ="Please enter the User name ...")]
         public string UserName { get; set; }
-        [Required]
+        [Required(ErrorMessage ="Please Enter the password .....")]
         public string Password { get; set; }
     }
 }
