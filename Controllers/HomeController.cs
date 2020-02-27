@@ -18,6 +18,24 @@ namespace MVC_All_Sessions.Controllers
                 return View(list);
         }
 
- 
+
+        public ActionResult DeleteEmployee()
+        {
+
+        }
+
+        public ActionResult CreateEmployee()
+        {
+
+        }
+
+        public ActionResult UpdateEmployee()
+        {
+
+        }
+
+
+
+
     }
 }
