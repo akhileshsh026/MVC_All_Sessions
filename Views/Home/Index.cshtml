@@ -1,25 +1,40 @@
-﻿@model MVC_All_Sessions.Models.Employee
+﻿@model List<MVC_All_Sessions.Models.Employee>
 
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.js"></script>
     <title>Index meth from the home contoller....</title>
 </head>
-<body>
+<body class="container">
     <div>
         <h2>Welcome to the Login Page ......</h2>
-        <form method="post" action="/">
-            <table></table>
-            <p>
-                <button type="submit"> Login </button>
-            </p>
-            <p style="color:red">
-                @Html.ValidationMessage("IC");
-            </p>
-        </form>
-
+            <table class="table-hover table-responsive table-bordered">
+                <thead>
+                    <tr>
+                        <th>Employee Id</th>
+                        <th>Employee Name</th>
+                        <th>Employee Location</th>
+                        <th>Employee Salary</th>
+                        <th>Employee Departmen ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        @foreach(var data in Model)
+                        {
+                    <tr>
+                        <td>@data.Id</td>
+                        <td>@data.Name</td>
+                        <td>@data.Location</td>
+                        <td>@data.Salary</td>
+                        <td>@data.Deptid</td>
+                    </tr>
+                        }
+                </tbody>
+            </table>
     </div>
 </body>
 </html>
