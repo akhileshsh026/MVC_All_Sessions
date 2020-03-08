@@ -34,10 +34,27 @@ namespace MVC_All_Sessions.Controllers
 
         }
 
-        public ActionResult CreateEmployee(Employee emp)
+        public ActionResult CreateEmployee()
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult CreateEmployee(Employee emp)
+        {
+            EmployeeRepositry employeeRepositry = new EmployeeRepositry();
+            var isCreated = employeeRepositry.Create_Employee(emp);
+            if(isCreated)
+            {
+                TempData["sucess"] = "The Employee is Created sucessfully.";
+                return RedirectToAction("Index");
+            } else
+            {
+                return View();
+            }
+        }
+
+
 
 
 
