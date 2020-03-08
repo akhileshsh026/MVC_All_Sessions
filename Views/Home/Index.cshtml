@@ -25,7 +25,6 @@
                         <th>Employee Departmen ID</th>
                         <th>Action's</th>
                         <th>Action's</th>
-                        <th>Action's</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,8 +37,7 @@
                         <td>@data.Salary</td>
                         <td>@data.Deptid</td>
                         <td> <a href="/Home/DeleteEmployee/@data.Id"> Delete </a> </td>
-                        <td> <a href="/Home/UpdateEmployee"> Update</a></td>
-                        <td> <a href="/Home/CreateEmployee"> Create</a></td>
+                        <td> <a href="/Home/UpdateEmployee/@data.Id"> Update</a></td>
                     </tr>
                         }
                 </tbody>

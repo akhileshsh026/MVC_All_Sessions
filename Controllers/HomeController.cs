@@ -57,6 +57,32 @@ namespace MVC_All_Sessions.Controllers
         }
 
 
+        public ActionResult UpdateEmployee(int id)
+        {
+            EmployeeRepositry repo = new EmployeeRepositry();
+            Employee emp = repo.GetById(id);
+            return View(emp);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateEmployee(Employee emp)
+        {
+            if(ModelState.IsValid)
+            {
+                EmployeeRepositry repo = new EmployeeRepositry();
+                bool isUpdated = repo.Update_Employee(emp);
+                if (isUpdated)
+                {
+                    TempData["sucess"] = "The Employee is Created sucessfully.";
+                    return RedirectToAction("Index");
+                }
+            }
+
+            return View();
+        }
+
+
+
 
 
 

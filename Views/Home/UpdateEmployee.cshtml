@@ -1,0 +1,54 @@
+﻿@model MVC_All_Sessions.Models.Employee
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateEmployee</title>
+</head>
+<body>
+    <p>
+        <h2>Employee Edit Screen...</h2>
+    </p>
+    <br/>
+    <div>
+        <form method="post" action="/Home/UpdateEmployee">
+            <div class="form-group row hide">
+                <p>
+                     @Html.HiddenFor(e => e.Id)           
+                </p>
+            </div>
+
+            <div class="form-group row">
+                <p>
+                    <label>Employee Name : @Html.TextBoxFor(e => e.Name)</label>
+                    <label style="color:red">@Html.ValidationMessageFor(e => e.Name)</label>
+                </p>
+            </div>
+            <div class="form-group row">
+                <p>
+                    <label>Employee Location : @Html.TextBoxFor(e => e.Location)</label>
+                    <label style="color:red">@Html.ValidationMessageFor(e => e.Location)</label>
+                </p>
+            </div>
+            <div class="form-group row">
+                <p>
+                    <label>Employee Salary : @Html.TextBoxFor(e => e.Salary)</label>
+                    <label style="color:red">@Html.ValidationMessageFor(e => e.Salary)</label>
+                </p>
+            </div>
+            <div class="form-group row">
+                <p>
+                    <label>Employee DepitId : @Html.TextBoxFor(e => e.Deptid)</label>
+                    <label style="color:red">@Html.ValidationMessageFor(e => e.Deptid)</label>
+                </p>
+            </div>
+            <button class="btn-success">Update Employee</button>
+        </form>
+    </div>
+</body>
+</html>
