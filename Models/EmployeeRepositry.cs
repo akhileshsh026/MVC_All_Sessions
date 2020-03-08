@@ -47,9 +47,9 @@ namespace MVC_All_Sessions.Models
         public bool Create_Employee(Employee emp)
         {
             SqlConnection sqlConnection = new SqlConnection(@"Server=localhost;Database=Mcop;User Id=sa;Password=Akhilesh@123");
-            var Query = "insert into Employee (Id,Name,Location,Salary,Deptid) values (@Id,@Name,@Location,@Salary,@Deptid)";
+            var Query = "insert into Employee (Name,Location,Salary,Deptid) values (@Name,@Location,@Salary,@Deptid)";
             SqlCommand cmd = new SqlCommand(Query,sqlConnection);
-            cmd.Parameters.Add(new SqlParameter("@Id", emp.Id));
+           // cmd.Parameters.Add(new SqlParameter("@Id", emp.Id));
             cmd.Parameters.Add(new SqlParameter("@Name",emp.Name));
             cmd.Parameters.Add(new SqlParameter("@Location",emp.Location));
             cmd.Parameters.Add(new SqlParameter("@Salary", emp.Salary));
