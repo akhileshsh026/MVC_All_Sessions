@@ -42,16 +42,18 @@ namespace MVC_All_Sessions.Controllers
         [HttpPost]
         public ActionResult CreateEmployee(Employee emp)
         {
-            EmployeeRepositry employeeRepositry = new EmployeeRepositry();
-            var isCreated = employeeRepositry.Create_Employee(emp);
-            if(isCreated)
+            if(ModelState.IsValid)
             {
-                TempData["sucess"] = "The Employee is Created sucessfully.";
-                return RedirectToAction("Index");
-            } else
-            {
-                return View();
+                EmployeeRepositry employeeRepositry = new EmployeeRepositry();
+                var isCreated = employeeRepositry.Create_Employee(emp);
+                if (isCreated)
+                {
+                    TempData["sucess"] = "The Employee is Created sucessfully.";
+                    return RedirectToAction("Index");
+                }
             }
+
+            return View();
         }
 
 
