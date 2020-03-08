@@ -127,6 +127,7 @@
     <Content Include="lib\twitter-bootstrap\js\bootstrap.min.js.map" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\CreateEmployee.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

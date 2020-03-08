@@ -43,5 +43,7 @@ namespace MVC_All_Sessions.Models
             con.Close();
             return noOfAffactedRows > 0 ? true : false;
         }
+
+
     }
 }

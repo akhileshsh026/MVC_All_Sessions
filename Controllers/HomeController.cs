@@ -34,6 +34,11 @@ namespace MVC_All_Sessions.Controllers
 
         }
 
+        public ActionResult CreateEmployee(Employee emp)
+        {
+            return View();
+        }
+
 
 
 
